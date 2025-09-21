@@ -23,6 +23,11 @@ createRoutes(){
     touch $filename
     echo "$filename created successfully. "
 }
-createController $1 $2
-createModel $1 $2
-createRoutes $1 $2
+
+while getopts "mcr" args; do
+    case $args in
+        m)  createModel $2 $3;;
+        c)  createController $2 $3;;
+        r)  createRoutes $2 $3;;
+    esac
+done

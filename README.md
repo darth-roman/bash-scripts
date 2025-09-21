@@ -38,3 +38,46 @@ $> gh-ssh-gen <key-name> <passphrase> <email> <ssh-title>
 **IMPORTANT**: Using this script will have to you use your own Personal Access Token, or Fine grained ones, just make sure you set SSH Key in permissions to read and write 
 
 [**More Information: Github Docs**](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)
+
+## [`gen-express`](gen-express.sh)
+Installs the basic, at least to me, techs to start developing your `express` app
+
+### How to use
+```bash
+$> gen-express [--mysql | --mongoo] [--ejs | --pug]
+```
+
+The installed `npm` packages are : `(express dotenv bcrybt jsonwebtoken cookie-parser)`
+And you get to choose between `mongoose` or `mysql` using `sequelize` ORM , as Database providers
+As for templating, you can use `ejs` or `pug`
+
+As also will give structure to your project as such
+```
+├── config/
+├── controllers/
+├── index.js
+├── middlewares/
+├── models/
+├── public/
+├── README.md
+├── routes/
+├── views/
+
+```
+
+the `index.js` has a boilerplate:
+```js
+import express from "express"
+
+const PORT = process.env.PORT || 3000
+const App = express()
+
+App.get("/", (req, res, next) => {
+    res.send("Roman Salute")
+})
+
+App.listen(PORT, () => {
+    console.log("Listening to: "+PORT)
+})
+```
+**Options are optional, duh**
