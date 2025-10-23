@@ -41,8 +41,14 @@ Generates and creates new SSH Key in your github account
 
 ### How to use
 ```bash
-$> gh-ssh-gen <key-name> <passphrase> <email> <ssh-title>
+$> gh-ssh-gen <key-name> <email> <token-file-path> <gh-token> <ssh-title>
 ```
+UPDATES:
+- `token-file-path`: Where do you keep your keys in your system
+
+- `gh-token`: fine grained or access token that you generated and kept inside your system
+
+- Removed setting the passphrase from the terminal (suggested seurity measure)
 **All Are required**
 
 **IMPORTANT**: Using this script will have to you use your own Personal Access Token, or Fine grained ones, just make sure you set SSH Key in permissions to read and write 
